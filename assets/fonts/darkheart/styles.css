@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'FontsFree-Net-darkheart-script';
+  src: url(./FontsFree-Net-darkheart-script.eot);
+  src: url(./FontsFree-Net-darkheart-script.eot?#iefix) format('embedded-opentype'),
+       url(./FontsFree-Net-darkheart-script.ttf) format('truetype'),
+       url(./FontsFree-Net-darkheart-script.woff) format('woff'),
+       url(./FontsFree-Net-darkheart-script.woff2) format('woff2'),
+       url(./FontsFree-Net-darkheart-script.otf) format('otf');
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <style>
+    *,
+    html {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 8500px;
+      scroll-behavior: smooth;
+      font-size: 1rem;
+      position: relative;
+      width: 100%;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      width: 100%;
+      height: 100vh;
+      background-image: url('assets/img/hero.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 0 -100px;
+      background-attachment: fixed;
+      margin-bottom: 12rem;
+    }
+    aside {
+      /* margin-top: 150rem; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 85vh;
+      padding: 0 1rem;
+      overflow: hidden;
+    }
+
+    aside div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    aside div span {
+      display: flex;
+      flex-direction: column;
+      font-size: 3rem;
+    }
+
+    aside div:first-child img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+
+      will-change: transform;
+      /* transform: translate(-50%); */
+      transition: 1s;
+      filter: blur(5px);
+      opacity: 0;
+    }
+    aside div:last-child img {
+      width: 100%;
+      height: 100%;
+      transform: translate(50%);
+      -webkit-transform: translateX(50%);
+      /* transform: translateX(50%); */
+      will-change: transform;
+      transition: 1s;
+      filter: blur(5px);
+      opacity: 0;
+      object-position: 0 top;
+      object-fit: cover;
+    }
+
+    aside.show-animate div:first-child img {
+      transform: translate(0%);
+      filter: blur(0px);
+      opacity: 1;
+    }
+    aside.show-animate div:last-child img {
+      transform: translate(0%);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  </style>
+  <body>
+    <header></header>
+    <main>
+      <aside>
+        <div>
+          <img class="moti-img" src="assets/img/left.jpg" alt="" width="200" />
+        </div>
+        <div>
+          <img class="moti-img" src="assets/img/right.jpg" alt="" width="200" />
+        </div>
+      </aside>
+    </main>
+    <script>
+      'use strict';
+
+      (() => {
+        // === DOM & VARS =======
+        const DOM = {};
+        DOM.asideEl = document.querySelector('aside');
+        DOM.ImageMotivationEl = DOM.asideEl.querySelector('div:first-child img');
+        DOM.ImageDedicationEl = DOM.asideEl.querySelector('div:last-child img');
+        console.log(DOM);
+
+        let asideMotiImg = 600;
+        // === INIT =============
+        const init = () => {
+          window.addEventListener('scroll', onScroll);
+        };
+
+        // === EVENTHANDLER =====
+
+        const onScroll = (e) => {
+          enableAnimate(DOM.asideEl, asideMotiImg);
+          // enableAnimate(DOM.ImageMotivationEl, asideMotiImg);
+        };
+
+        // === XHR/FETCH ========
+
+        // === FUNCTIONS ========
+        const enableAnimate = (element, position = 0) => {
+          const top = window.scrollY;
+          const offset = element.offsetTop - position;
+          const height = element.offsetHeight;
+
+          if (Array.isArray(element)) {
+            element.forEach((el) => {
+              const offset = el.offsetTop - position;
+              const height = el.offsetHeight;
+              if (top >= offset && top < offset + height) {
+                el.classList.add('show-animate');
+              } else {
+                // el.classList.remove('show-animate');
+                // if (el.classList.contains('show-animate')) {
+                // }
+              }
+            });
+          }
+
+          if (top >= offset && top < offset + height) {
+            // element.style.transform = 'translate(0px)';
+            // element.style.opacity = '1';
+            // element.style.filter = 'blur(0px)';
+
+            element.classList.add('show-animate');
+          }
+        };
+
+        init();
+      })();
+    </script>
+  </body>
+</html>

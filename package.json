@@ -1,0 +1,27 @@
+{
+  "name": "fitness",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-terser": "^0.4.3",
+    "rollup": "^3.28.1",
+    "rollup-plugin-sass": "^1.12.20",
+    "rollup-plugin-scss": "^4.0.0",
+    "sass": "^1.66.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "postcss-cli": "^10.1.0",
+    "rollup-plugin-postcss": "^4.0.2"
+  }
+}

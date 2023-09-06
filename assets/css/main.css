@@ -1,0 +1,428 @@
+@font-face {
+  font-family: "darkheart";
+  src: url("../fonts/darkheart/FontsFree-Net-darkheart-script.ttf");
+  src: url("../fonts/darkheart/FontsFree-Net-darkheart-script.eot") format("embedded-opentype"), url("../fonts/darkheart/FontsFree-Net-darkheart-script.ttf") format("truetype"), url("../fonts/darkheart/FontsFree-Net-darkheart-script.woff") format("woff"), url("../fonts/darkheart/FontsFree-Net-darkheart-script.woff2") format("woff2"), url("../fonts/darkheart/FontsFree-Net-darkheart-script.otf") format("otf");
+}
+/* poppins-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/poppins-v20-latin/poppins-v20-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/poppins-v20-latin/poppins-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+*,
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-size: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fade-in-right {
+  transition: 1s;
+  filter: blur(5px);
+  opacity: 0;
+  transform: translate(100%);
+}
+
+.fade-in-left {
+  transition: 1s;
+  filter: blur(5px);
+  opacity: 0;
+  transform: translate(-100%);
+}
+
+.show-animate {
+  transform: translate(0%);
+  filter: blur(0px);
+  opacity: 1;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -100px;
+  background-attachment: fixed;
+  margin-bottom: 12rem;
+  position: relative;
+  z-index: 101;
+}
+header h1 {
+  color: #e20953;
+  font-family: darkheart;
+  font-size: 13rem;
+  font-weight: 500;
+  padding: 10rem 0 0 10rem;
+}
+
+aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 45vw;
+  padding: 0 1rem;
+  overflow: hidden;
+  margin-bottom: 15rem;
+}
+aside div:last-child img {
+  transform: translate(50%);
+  transition: 1s;
+  filter: blur(5px);
+  opacity: 0;
+  object-position: 0 top;
+}
+aside div:first-child img {
+  transform: translate(-50%);
+  transition: 1s;
+  filter: blur(5px);
+  opacity: 0;
+}
+aside div.show-animate span:last-child {
+  top: 100%;
+}
+aside div.show-animate img {
+  transform: translate(0%);
+  filter: blur(0px);
+  opacity: 1;
+}
+aside div {
+  flex-basis: 50%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+aside div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+aside div p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+  font-family: Poppins;
+  font-size: 4rem;
+  color: #262626;
+}
+aside div p span:last-child {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #fff;
+  transition: 0.8s;
+  transition-delay: 0.4s;
+}
+
+.sec-deadlift {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow: hidden;
+  margin-bottom: 15rem;
+}
+.sec-deadlift div:first-child {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 0 7rem;
+}
+.sec-deadlift div:last-child {
+  flex-basis: 50%;
+}
+.sec-deadlift div:last-child ul {
+  padding: 0 7rem 0rem 7rem;
+}
+.sec-deadlift div:last-child ul li:last-child {
+  margin: 0;
+}
+.sec-deadlift div:last-child ul li {
+  margin-bottom: 3rem;
+}
+.sec-deadlift div:last-child ul li p {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Poppins;
+  color: #262626;
+}
+.sec-deadlift div:last-child ul li p span:last-child {
+  border-left: 1px solid black;
+  padding-left: 1rem;
+  flex-basis: 93%;
+}
+.sec-deadlift div:last-child ul li p span:first-child {
+  flex-basis: 7%;
+  font-size: 2.5rem;
+}
+.sec-deadlift div .motiv-text {
+  display: flex;
+  font-size: 5rem;
+  font-family: darkheart;
+  padding: 0 0 15rem 2rem;
+  color: #e20953;
+}
+
+.sec-bench {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  gap: 1rem;
+  overflow: hidden;
+  margin-bottom: 15rem;
+}
+.sec-bench div:last-child {
+  flex-basis: 50%;
+}
+.sec-bench div:first-child {
+  flex-basis: 50%;
+}
+.sec-bench div:first-child ul {
+  padding: 0 7rem 0rem 7rem;
+}
+.sec-bench div:first-child ul li:last-child {
+  margin: 0;
+}
+.sec-bench div:first-child ul li {
+  margin-bottom: 3rem;
+}
+.sec-bench div:first-child ul li p {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  font-family: Poppins;
+  color: #262626;
+}
+.sec-bench div:first-child ul li p span:last-child {
+  border-left: 1px solid black;
+  padding-left: 1rem;
+  flex-basis: 93%;
+}
+.sec-bench div:first-child ul li p span:first-child {
+  flex-basis: 7%;
+  font-size: 2.5rem;
+}
+.sec-bench div .motiv-text {
+  display: flex;
+  font-size: 5rem;
+  text-align: center;
+  padding: 0rem 7rem 33rem 7rem;
+  font-family: darkheart;
+  color: #e20953;
+}
+.sec-bench div .motiv-text.bench {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sec-squat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  gap: 1rem;
+  overflow: hidden;
+  margin-bottom: 32rem;
+}
+.sec-squat div:first-child {
+  flex-basis: 50%;
+}
+.sec-squat div:last-child {
+  flex-basis: 50%;
+}
+.sec-squat div:last-child ul {
+  padding: 0 7rem 0rem 7rem;
+}
+.sec-squat div:last-child ul li:last-child {
+  margin: 0;
+}
+.sec-squat div:last-child ul li {
+  margin-bottom: 3rem;
+}
+.sec-squat div:last-child ul li p {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  font-family: Poppins;
+  color: #262626;
+}
+.sec-squat div:last-child ul li p span:last-child {
+  border-left: 1px solid black;
+  padding-left: 1rem;
+  flex-basis: 93%;
+}
+.sec-squat div:last-child ul li p span:first-child {
+  flex-basis: 7%;
+  font-size: 2.5rem;
+}
+.sec-squat div .motiv-text {
+  font-family: darkheart;
+  display: flex;
+  font-size: 5rem;
+  text-align: center;
+  padding: 0 7rem 18rem 7rem;
+  color: #e20953;
+}
+.sec-squat div .motiv-text.squat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sec-img {
+  width: 100%;
+  height: 37vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+.sec-img p {
+  font-family: darkheart;
+}
+.sec-img p svg {
+  font-size: 4rem;
+}
+
+.sec-img div {
+  flex-basis: 25%;
+  height: 100%;
+  transition: 1s;
+  opacity: 0;
+  filter: blur(7px);
+  transform: translate(150%);
+  transition-delay: calc(0.2s * var(--i));
+}
+.sec-img div:first-child img {
+  object-position: -27rem;
+}
+
+.sec-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sec-img div.show-animate {
+  transform: translate(0);
+  filter: blur(0px);
+  opacity: 1;
+}
+
+footer {
+  position: relative;
+  z-index: 300;
+  width: 100%;
+  padding: 0 1rem;
+  font-family: Poppins;
+  font-size: 1.2;
+  color: #262626;
+}
+footer p {
+  background-color: #ffc514;
+  text-align: center;
+  padding: 2rem 0 0 0;
+  font-size: 2rem;
+}
+footer > div {
+  background-color: #ffc514;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.2rem 25rem;
+}
+footer > div div {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 25%;
+}
+footer > div div ul li {
+  margin-bottom: 0.2rem;
+  pointer-events: none;
+}
+footer > div div ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+footer > div div ul li a:visited {
+  color: initial;
+}
+footer > div div h4 {
+  font-size: 1.5rem;
+  flex-basis: 35%;
+}
+
+.cycle svg {
+  font-size: 2rem;
+}
+
+.svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.svg-container svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0 7rem;
+}
+.svg-container svg path {
+  transition: all 0.6s ease-out;
+}
+
+/*# sourceMappingURL=main.css.map */
